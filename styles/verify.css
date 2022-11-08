@@ -1,4 +1,4 @@
-.submit{
+.form .submit{
     width: 40%;
 }
 .form .submit input{
@@ -21,6 +21,9 @@
 
 }
 @media (max-width:1100px){
+    .submit{
+        width: 100%;
+    }
     .form .submit input{
         font-size: 8pt;
       
@@ -28,7 +31,7 @@
     }
 }  
 @media (max-width:860px){
-    .submit{
+    .form .submit{
         width: 100%;
     }
     .form .submit input{
