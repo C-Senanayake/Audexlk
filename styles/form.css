@@ -87,4 +87,72 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+.form h1{
+    text-align: center;
+}
+.error{
+    background: #ff7373;
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    padding: 1% 1% 1% 1%;
+    display: none;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: left;
+    width: 30%;
+    margin-left: 10%;
+    height: 90vh;
  }
+ .form form input{
+    width: 100%;
+    line-height: 5vh;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    padding-left: 2%;
+ }
+ .form form label{
+    width: 100%;
+    line-height: 5vh;
+    margin-left: 3%;
+ }
+ .form form select{
+    width: 100%;
+    line-height: 15vh;
+    height: 5vh;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-left: 2%;
+ }
+ .submit{
+     width: 30%;
+     margin-top: 2vh;
+     height: 4vh;
+    }
+    .submit input{
+        /* padding: 2% 0 2% 0; */
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background :#ffffff;
+        margin-top: 2vh;
+        height: 5vh;
+        border: 1px solid black;
+        border-radius: 12px;
+
+}
+.submit input:hover{
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 12px;
+
+} 
