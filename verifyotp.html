@@ -28,46 +28,22 @@
         </ul>
     </nav>
     <div class="container">
-        <div id="forms" class="form">
+        <div class="form">
             <h1>Register</h1>
             <div class="error">Error</div>
-            <form action="verifyotp.html" autocomplete="off">
+            <form action="" autocomplete="off">
+                <label >OTP(sent to email address)</label>
                 <div class="input">
-                    <label for="">First Name</label>
-                    <input type="text" name="fname" placeholder="First Name" required>
-                </div>
-                <div class="input">
-                    <label for="">Last Name</label>
-                    <input type="text" name="lname" placeholder="Last Name" required>
-                </div>
-                <div class="input">
-                    <label for="">Email</label>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="input">
-                    <label for="">Mobile Phone Number</label>
-                    <input type="phone" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
-                </div>
-                <div class="input">
-                    <label for="type">Account type</label>
-                        <select name="type" id="type">
-                          <option value="buyer">Buyer</option>
-                          <option value="seller">Seller</option>
-                          <option value="service_provider">Service Provider</option>                         
-                        </select>
-                </div>
-                <div class="input">
-                    <label for="">Password</label>
-                    <input type="password" name="password" required>
+                    <input type="number" name="otp"  class="otp1" placeholder="0" pattern="[0-9]{4}" onpaste="false" required>                   
                 </div>
                 <div class="submit">
-                    <input type="submit" value="Next" class="button">
+                    <input type="submit" value="Finish Registration" id="button">
                 </div>
             </form>
         </div>
     </div>
 </body>
-<script src="js/form.js"></script>
+<script src="js/verify.js"></script>
 </html>
 <!-- <?php mysqli_close($connection);?> -->
 <!-- Closing the connection
