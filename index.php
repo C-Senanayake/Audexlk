@@ -1,4 +1,5 @@
-<!-- <?php require_once('./include/connection.php');?> -->
+ <?php //require_once('./include/connection.php');?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/form.css">
-    <link rel="stylesheet" href="styles/verify.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" ></script> -->
     <script src="https://kit.fontawesome.com/128d66c486.js" crossorigin="anonymous"></script>
-    <title>Register</title>
+    <title>Login</title>
 </head>
 <body>
     <nav>
@@ -29,39 +30,24 @@
     </nav>
     <div class="container">
         <div id="forms" class="form">
-            <h1>Register</h1>
+            <h1>Login</h1>
             <div class="error">Error</div>
             <form action="verifyotp.html" autocomplete="off">
                 <div class="input">
-                    <label for="">First Name</label>
-                    <input type="text" name="fname" placeholder="First Name" required>
-                </div>
-                <div class="input">
-                    <label for="">Last Name</label>
-                    <input type="text" name="lname" placeholder="Last Name" required>
-                </div>
-                <div class="input">
                     <label for="">Email</label>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="input">
-                    <label for="">Mobile Phone Number</label>
-                    <input type="phone" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
-                </div>
-                <div class="input">
-                    <label for="type">Account type</label>
-                        <select name="type" id="type">
-                          <option value="buyer">Buyer</option>
-                          <option value="seller">Seller</option>
-                          <option value="service_provider">Service Provider</option>                         
-                        </select>
+                    <input type="email" name="email" placeholder="Enter email" required>
                 </div>
                 <div class="input">
                     <label for="">Password</label>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" placeholder="Enter password" required>
                 </div>
+                <div class="reg_now">
+                    <p>Do not have an account?&nbsp&nbsp</p>
+                    <a href="register.php"> Register now</a>
+                </div>
+                <a href="register.html" class="forgot">Forgot password</a>
                 <div class="submit">
-                    <input type="submit" value="Next" class="button">
+                    <input type="submit" value="Login" class="button">
                 </div>
             </form>
         </div>
@@ -69,5 +55,5 @@
 </body>
 <script src="js/form.js"></script>
 </html>
-<!-- <?php mysqli_close($connection);?> -->
+<!-- <?php //mysqli_close($connection);?> -->
 <!-- Closing the connection
