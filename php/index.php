@@ -21,24 +21,35 @@
             $password=mysqli_real_escape_string($connection,$_POST['password']);
             $hashed_password=sha1($password);
             //database query
-            $query="SELECT * FROM user WHERE
+            $query="SELECT * FROM user WHERE 
                     email='{$email}'                     
                     AND 
-                    password='{$password}' LIMIT 1";
+                    password='{$hashed_password}' LIMIT 1";
 
             $result_set=mysqli_query($connection,$query);
             verify_query($result_set);
             //query successful
             if(mysqli_num_rows($result_set)==1){
                 $user=mysqli_fetch_assoc($result_set);
-                $_SESSION['user_id']=$user['_id'];
-                $_SESSION['first_name']=$user['first_name'];
-                //updating last login
-                $query="UPDATE user SET last_login=NOW() WHERE
-                        _id= {$_SESSION['user_id']} LIMIT 1";
-                $result_set=mysqli_query($connection,$query);
-                verify_query($result_set);
-                header('Location:home.php');
+                echo $user['email_active'];
+                echo $user['is_deleted'];
+                if($user['email_active']==1 && $user['is_deleted']==0){
+                    $_SESSION['user_id']=$user['_id'];
+                    $_SESSION['first_name']=$user['first_name'];
+                    //updating last login
+                    $query="UPDATE user SET last_login=NOW() WHERE
+                            _id= {$_SESSION['user_id']} LIMIT 1";
+                    $result_set=mysqli_query($connection,$query);
+                    verify_query($result_set);
+                    header('Location:home.php');
+                }else if($user['email_active']==0){
+                $errors[]='Email not verified';
+
+                }
+                else if($user['is_deleted']==1){
+                    $errors[]='Had a previous account and deleted';
+    
+                }
             }//email/password invalid
             else{
                 $errors[]='Invalid email/Password';
@@ -79,7 +90,11 @@
             <h1>Login</h1>
             <?php
                 if(isset($errors) && !empty($errors)){
-                    echo '<div class="error">Error</div>';
+                    echo '<div class="error">';
+                    foreach($errors as $error){
+                        echo '-'.$error.'<br>';
+                    }
+                    echo '</div>';
                 }
                 if(isset($_GET['logout'])){
                     echo '<div class="error">Successfully loged out</div>';
@@ -98,7 +113,7 @@
                 </div>
                 <div class="reg_now">
                     <p>Do not have an account?&nbsp&nbsp</p>
-                    <a href="register.html"> Register now</a>
+                    <a href="register.php"> Register now</a>
                 </div>
                 <a href="register.html" class="forgot">Forgot password</a>
                 <div class="submit">

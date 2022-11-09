@@ -37,7 +37,10 @@
         $result_set=mysqli_query($connection,$query);
         if($result_set){
             if(mysqli_num_rows($result_set)==1){
-                $errors[]="Email address already exist";
+                $user=mysqli_fetch_assoc($result_set);
+                if($user['email_active']==1){
+                    $errors[]="Email address already exist";
+                }
             }
         }
 
@@ -53,10 +56,24 @@
             $otp=rand(111111,999999);
             $hashed_password=sha1($password);
 
-            $query="INSERT INTO user(
-                   first_name,second_name,email,phone_number,user_type,password,otp,email_active,isdeleted)
-                   VALUES (
-                   '{$fname}', '{$lname}', '{$email}','{$phone}', '{$type}', '{$hashed_password}', '{$otp}', 0, 0 )";
+            if($result_set){
+                if(mysqli_num_rows($result_set)==1){
+                    $user=mysqli_fetch_assoc($result_set);
+                    if($user['email_active']==0){
+                        $query="UPDATE user SET first_name='{$fname}',second_name='{$lname}',email='{$email}'
+                                ,phone_number='{$phone}',user_type='{$type}',password='{$hashed_password}',otp='{$otp}' 
+                                WHERE email='{$email}' LIMIT 1 ";
+                    }
+                }
+                else{
+                    $query="INSERT INTO user(
+                           first_name,second_name,email,phone_number,user_type,password,otp,email_active,is_deleted)
+                           VALUES (
+                           '{$fname}', '{$lname}', '{$email}','{$phone}', '{$type}', '{$hashed_password}', '{$otp}', 0, 0 )";
+
+                }
+            }
+
             $result_set=mysqli_query($connection,$query);
             if($result_set){
                 //query successful
