@@ -90,11 +90,11 @@
             <form action="index.php" method="post" >
                 <div class="input">
                     <label for="">Email</label>
-                    <input type="email" name="email" placeholder="Enter email" >
+                    <input type="email" name="email" placeholder="Enter email" required>
                 </div>
                 <div class="input">
                     <label for="">Password</label>
-                    <input type="password" name="password" placeholder="Enter password" >
+                    <input type="password" name="password" placeholder="Enter password" required>
                 </div>
                 <div class="reg_now">
                     <p>Do not have an account?&nbsp&nbsp</p>
