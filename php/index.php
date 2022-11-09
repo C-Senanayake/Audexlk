@@ -1,5 +1,7 @@
 <?php session_start();?>
 <?php require_once('../include/connection.php');?>
+<?php require_once('../include/functions.php');?>
+
 
 <?php
     //check form submission
@@ -25,24 +27,22 @@
                     password='{$password}' LIMIT 1";
 
             $result_set=mysqli_query($connection,$query);
-            if($result_set){
-                //query successful
-                if(mysqli_num_rows($result_set)==1){
-                    $user=mysqli_fetch_assoc($result_set);
-                    $_SESSION['user_id']=$user['_id'];
-                    $_SESSION['first_name']=$user['first_name'];
-
-                    header('Location:home.php');
-                }//email/password invalid
-                else{
-                    $errors[]='Invalid email/Password';
-                }
-            }
+            verify_query($result_set);
+            //query successful
+            if(mysqli_num_rows($result_set)==1){
+                $user=mysqli_fetch_assoc($result_set);
+                $_SESSION['user_id']=$user['_id'];
+                $_SESSION['first_name']=$user['first_name'];
+                //updating last login
+                $query="UPDATE user SET last_login=NOW() WHERE
+                        _id= {$_SESSION['user_id']} LIMIT 1";
+                $result_set=mysqli_query($connection,$query);
+                verify_query($result_set);
+                header('Location:home.php');
+            }//email/password invalid
             else{
-                $errors[]='Database query failed';
+                $errors[]='Invalid email/Password';
             }
-
-
         }
     }
 ?>
@@ -81,6 +81,10 @@
                 if(isset($errors) && !empty($errors)){
                     echo '<div class="error">Error</div>';
                 }
+                if(isset($_GET['logout'])){
+                    echo '<div class="error">Successfully loged out</div>';
+                }
+
             ?>
 
             <form action="index.php" method="post" >

@@ -1,5 +1,7 @@
 <?php session_start();?>
 <?php require_once('../include/connection.php');?>
+<?php require_once('../include/functions.php');?>
+
 <?php 
     //checking if a user is logged in
     if(!isset($_SESSION['user_id'])){
@@ -33,7 +35,7 @@
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
-            <li><a href="#" class="nav_tags"><?php echo $_SESSION['first_name'];?>
+            <li><a href="logout.php" class="nav_tags"><?php echo $_SESSION['first_name'];?>
 </a></li>
         </ul>
     </nav>
