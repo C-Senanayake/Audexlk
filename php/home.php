@@ -1,16 +1,25 @@
-<!-- <?php require_once('./include/connection.php');?> -->
+<?php session_start();?>
+<?php require_once('../include/connection.php');?>
+<?php 
+    //checking if a user is logged in
+    if(!isset($_SESSION['user_id'])){
+        header('Location:index.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/form.css">
-    <link rel="stylesheet" href="styles/verify.css">
+    <link rel="stylesheet" href="../styles/form.css">
+    <link rel="stylesheet" href="../styles/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" ></script> -->
     <script src="https://kit.fontawesome.com/128d66c486.js" crossorigin="anonymous"></script>
-    <title>Register</title>
+    <title>Login</title>
 </head>
 <body>
     <nav>
@@ -18,32 +27,21 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="img/image 1.png" alt="">
+        <img src="../img/image 1.png" alt="">
         <ul>
             <li><a href="#" class="nav_tags">Home</a></li>
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
-            <li><a href="#" class="nav_tags">Login</a></li>
+            <li><a href="#" class="nav_tags"><?php echo $_SESSION['first_name'];?>
+</a></li>
         </ul>
     </nav>
     <div class="container">
-        <div class="form">
-            <h1>Register</h1>
-            <div class="error">Error</div>
-            <form action="" autocomplete="off">
-                <label >OTP(sent to email address)</label>
-                <div class="input">
-                    <input type="number" name="otp"  class="otp1" placeholder="0" pattern="[0-9]{4}" onpaste="false" required>                   
-                </div>
-                <div class="submit">
-                    <input type="submit" value="Finish Registration" id="button">
-                </div>
-            </form>
-        </div>
+        
     </div>
 </body>
-<script src="js/form.js"></script>
+<script src="../js/form.js"></script>
 </html>
-<!-- <?php mysqli_close($connection);?> -->
+<?php mysqli_close($connection);?>
 <!-- Closing the connection

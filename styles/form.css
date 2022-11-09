@@ -92,13 +92,19 @@
 .form h1{
     text-align: center;
 }
+.container .form h2{
+  background: #ff7373;
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    padding: 1% 1% 1% 1%;
+}
 .error{
     background: #ff7373;
     width: 100%;
     text-align: center;
     margin-top: 2%;
     padding: 1% 1% 1% 1%;
-    display: none;
 }
 .form{
     display: flex;
