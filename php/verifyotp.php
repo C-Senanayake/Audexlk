@@ -1,4 +1,43 @@
-<!-- <?php require_once('./include/connection.php');?> -->
+<?php session_start();?>
+<?php require_once('../include/connection.php');?>
+<?php require_once('../include/functions.php');?>
+<?php
+        $errors=array();
+        $otp1='';
+
+    if(isset($_POST['submit'])){
+        $email=$_SESSION['email'];
+        $query="SELECT * FROM user WHERE email='{$email}' LIMIT 1";
+
+        $result_set=mysqli_query($connection,$query);
+        
+        if($result_set){
+            if(mysqli_num_rows($result_set)==1){
+                $result=mysqli_fetch_assoc($result_set);
+                $otp1=$result['otp'];
+                echo $otp1;
+            }
+        }
+
+        $otp=$_POST['otp'];
+
+        if($otp==$otp1){
+            $active=1;
+            $query="UPDATE user SET email_active='{$active}' WHERE email='{$email}' LIMIT 1";
+
+            $result_set=mysqli_query($connection,$query);
+            
+            if($result_set){
+                header('Location:index.php');
+            }
+        }
+        else{
+            $errors[]="Entered OTP value is wrong";
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +69,23 @@
     <div class="container">
         <div class="form">
             <h1>Register</h1>
-            <div class="error">Error</div>
-            <form action="" autocomplete="off">
+            <?php
+                if(!empty($errors)){
+                    echo '<div class="error">';
+                    foreach($errors as $error){
+                        echo '-'.$error.'<br>';
+                    }
+                    echo '</div>';
+                }
+
+            ?>
+            <form action="verifyotp.php" method="post">
                 <label >OTP(sent to email address)</label>
                 <div class="input">
-                    <input type="number" name="otp"  class="otp1" placeholder="0" pattern="[0-9]{4}" onpaste="false" required>                   
+                    <input type="number" name="otp"  class="otp1" placeholder="0" pattern="[0-9]{6}" onpaste="false" required>                   
                 </div>
                 <div class="submit">
-                    <input type="submit" value="Finish Registration" id="button">
+                    <input type="submit" name="submit" value="Finish Registration" id="button">
                 </div>
             </form>
         </div>
@@ -45,5 +93,5 @@
 </body>
 <script src="../js/form.js"></script>
 </html>
-<!-- <?php mysqli_close($connection);?> -->
+<?php mysqli_close($connection);?>
 <!-- Closing the connection

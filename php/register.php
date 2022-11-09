@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php require_once('../include/connection.php');?>
 <?php require_once('../include/functions.php');?>
 <?php
@@ -8,6 +9,7 @@
         $email='';
         $phone='';
         $password='';
+        $otp='';
 
     if(isset($_POST['submit'])){
         
@@ -48,19 +50,38 @@
             $type=mysqli_real_escape_string($connection , $_POST['type']);
             $password=mysqli_real_escape_string($connection , $_POST['password']);
 
+            $otp=rand(111111,999999);
             $hashed_password=sha1($password);
 
             $query="INSERT INTO user(
-                   first_name,second_name,email,phone_number,user_type,password,isdeleted)
+                   first_name,second_name,email,phone_number,user_type,password,otp,email_active,isdeleted)
                    VALUES (
-                   '{$fname}', '{$lname}', '{$email}','{$phone}', '{$type}', '{$hashed_password}',0 )";
+                   '{$fname}', '{$lname}', '{$email}','{$phone}', '{$type}', '{$hashed_password}', '{$otp}', 0, 0 )";
             $result_set=mysqli_query($connection,$query);
             if($result_set){
                 //query successful
-                header('Location:index.php');
+                //otp sending by email
+                
+
+                $to=$email;
+                $sender='chamath5000@gmail.com';
+                $mail_subject='Verify Email Address';
+                $email_body='<p>Dear'.$fname.'<br>Thank you for signing up to Audexlk. In order to'; 
+                $email_body.=' validate your acoount you need enter the given OTP in the verification page.<br>';
+                $email_body.='<h3>The OTP</h3><br><h1>'.$otp.'</h1><br>';
+                $email_body.='Thank you,<br>Audexlk</p>';
+                $header="From:{$sender}\r\nContent-Type:text/html;";
+                $send_mail_result=mail($to,$mail_subject,$email_body,$header);
+                if($send_mail_result){
+                    $_SESSION['email']=$email;
+                    header('Location:verifyotp.php?email='.$email);
+                }
+                else{
+                }
+
             }
             else{
-                $errors[]='Dailed to add the user';
+                $errors[]='Failed to add the user';
             }        
         }
 
