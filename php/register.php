@@ -28,6 +28,42 @@
         if(!is_email($_POST['email'])){
             $errors[]='Email address is invalid';
         }
+
+        //checking whether email is entered
+        $email=mysqli_real_escape_string($connection , $_POST['email']);
+        $query="SELECT * FROM user WHERE email='{$email}' LIMIT 1";
+        $result_set=mysqli_query($connection,$query);
+        if($result_set){
+            if(mysqli_num_rows($result_set)==1){
+                $errors[]="Email address already exist";
+            }
+        }
+
+        if(empty($errors)){
+            //no errors
+            $fname=mysqli_real_escape_string($connection , $_POST['fname']);
+            $lname=mysqli_real_escape_string($connection , $_POST['lname']);
+            $email=mysqli_real_escape_string($connection , $_POST['email']);
+            $phone=mysqli_real_escape_string($connection , $_POST['phone']);
+            $type=mysqli_real_escape_string($connection , $_POST['type']);
+            $password=mysqli_real_escape_string($connection , $_POST['password']);
+
+            $hashed_password=sha1($password);
+
+            $query="INSERT INTO user(
+                   first_name,second_name,email,phone_number,user_type,password,isdeleted)
+                   VALUES (
+                   '{$fname}', '{$lname}', '{$email}','{$phone}', '{$type}', '{$hashed_password}',0 )";
+            $result_set=mysqli_query($connection,$query);
+            if($result_set){
+                //query successful
+                header('Location:index.php');
+            }
+            else{
+                $errors[]='Dailed to add the user';
+            }        
+        }
+
     }
 ?>
 
