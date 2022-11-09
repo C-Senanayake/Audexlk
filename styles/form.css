@@ -80,11 +80,14 @@
   }
  .container{
     background-image: url("../img/retro-microphone-isolated-color-background\ 1.png");
-    width: 100%;
+    width: 100vw;
     height: 90vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-position-y: bottom;
+    background-position-x: right;
+  
 }
 .form h1{
     text-align: center;
@@ -147,10 +150,14 @@
         border-radius: 12px;
 
 }
+/* ADDED BY EPA */
+form .reg_now{
+  padding-top:40px;
+}
+
 .form .submit input:hover{
-    background: black;
-    color: white;
-    border: 1px solid white;
+    background: rgb(80, 8, 222);
+    color: rgb(255, 255, 255);
     border-radius: 12px;
 
 } 
