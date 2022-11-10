@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" ></script> -->
     <script src="https://kit.fontawesome.com/128d66c486.js" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <nav>
@@ -30,33 +30,13 @@
             <li><a href="#" class="nav_tags">Login</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <div class="sidebar">
-            <div class="side">
-                <i class="fas fa-qrcode"></i>
-                <a href="#">Dashboard</a>
-            </div>
-            <div class="side">
-                <i class="fa fa-cog"></i>
-                <a href="#">Profile Settings</a>
-
-            </div>
-            <div class="side">
-                <i class="fa fa-ad" ></i>
-                <a href="#">Advertisements</a>
-            </div>
-            <div class="side">
-                <i class="fa fa-calendar" ></i>
-                <a href="#">Sell Item</a>
-
-            </div>
-            <div class="side">
-                <i class="fa fa-comments"></i>
-                <a href="#">Messages</a>
-
-            </div>
+    <div class="sidebar">
+            <a href="#"><i class="fas fa-qrcode"></i> <span>Dashboard</span></a>
+            <a href="#"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
+            <a href="#"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
+            <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i><span>Calender</span></a>
+            <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
         </div>
-    </div>
 </body>
 <script src="../js/form.js"></script>
 </html>
