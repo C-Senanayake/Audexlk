@@ -44,6 +44,12 @@
 .input .price{
     width: 20%;
 }
+.date{
+    display: none;
+}
+#check_au:checked ~ .date{
+    display: block;
+  }
 .image{
     display: flex;
     justify-content: space-around;

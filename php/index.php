@@ -20,6 +20,8 @@
             $email=mysqli_real_escape_string($connection,$_POST['email']);
             $password=mysqli_real_escape_string($connection,$_POST['password']);
             $hashed_password=sha1($password);
+            $_SESSION['email']=$email;
+
             //database query
             $query="SELECT * FROM user WHERE 
                     email='{$email}'                     
@@ -36,6 +38,7 @@
                 if($user['email_active']==1 && $user['is_deleted']==0){
                     $_SESSION['user_id']=$user['_id'];
                     $_SESSION['first_name']=$user['first_name'];
+
                     //updating last login
                     $query="UPDATE user SET last_login=NOW() WHERE
                             _id= {$_SESSION['user_id']} LIMIT 1";
