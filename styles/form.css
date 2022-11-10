@@ -195,6 +195,58 @@ a:hover, a:active{
   font-size: 23px;
   margin-right: 16px;
 }
+.content-box{
+  position: fixed;
+  width: 1108px;
+  height: 560px;
+  left: 265px;
+  top: 65px;
+  background: #E5E9F7;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-box .name-field{
+  background-color: #E5E9F7;
+  width: 990px;
+  height: 190px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 5px solid #002EF9 ;
+
+}
+.content-box .name-field img{
+  margin: 0 50px 0 20px;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #f900a2 ;
+
+}
+.content-box .name-field h1{
+  margin: 0 50px 0 20px;
+  border: 5px solid #7d1414 ;
+}
+.content-box .details{
+  display: flex;
+  flex-direction: row;
+}
+.details-description{
+  background-color: greenyellow;
+  margin-right: 65px;
+  width: 455px;
+  height: 400px;
+
+}
+.details-info{
+  background-color: #15e56c;
+  width: 455px;
+  height: 400px;
+}
+
 .search{
   position: absolute;
   width: 1220px;
