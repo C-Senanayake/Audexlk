@@ -13,7 +13,7 @@
     border: 1px solid white;
     border-radius: 12px;
     height: 100%;
-    padding:4% 3% 1% 3%;
+    padding:2% 3% 1% 3%;
 
 }
 .form_seller{
@@ -24,7 +24,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding:2% 3% 1% 3%;
+    padding:1% 3% 1% 3%;
 
 }
 .input label{
@@ -55,7 +55,7 @@
 }
 .image input{
     width: 30%;
-    height: 8vh;
+    height: 5vh;
     flex-basis: 20%;
 }
 .fa-solid{

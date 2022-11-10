@@ -63,6 +63,14 @@
                         $query="UPDATE user SET first_name='{$fname}',second_name='{$lname}',email='{$email}'
                                 ,phone_number='{$phone}',user_type='{$type}',password='{$hashed_password}',otp='{$otp}' 
                                 WHERE email='{$email}' LIMIT 1 ";
+
+                        if($type=="seller"){
+                            $query1="UPDATE seller SET(
+                                email='{$email}',first_name='{$fname}',last_name='{$lname}')
+                                WHERE email='{$email}' LIMIT 1 ";
+                        $result_set1=mysqli_query($connection,$query1);
+                                
+                        }
                     }
                 }
                 else{
@@ -70,12 +78,20 @@
                            first_name,second_name,email,phone_number,user_type,password,otp,email_active,is_deleted)
                            VALUES (
                            '{$fname}', '{$lname}', '{$email}','{$phone}', '{$type}', '{$hashed_password}', '{$otp}', 0, 0 )";
+                    if($type=="seller"){
+                        $query1="INSERT INTO seller(
+                            email,first_name,last_name)
+                            VALUES (
+                            '{$email}','{$fname}', '{$lname}')";
+                    $result_set1=mysqli_query($connection,$query1);
+                    
+                    }
 
                 }
             }
 
             $result_set=mysqli_query($connection,$query);
-            if($result_set){
+            if($result_set && $result_set1){
                 //query successful
                 //otp sending by email
                 
@@ -83,7 +99,7 @@
                 $to=$email;
                 $sender='chamath5000@gmail.com';
                 $mail_subject='Verify Email Address';
-                $email_body='<p>Dear'.$fname.'<br>Thank you for signing up to Audexlk. In order to'; 
+                $email_body='<p>Dear '.$fname.',<br>Thank you for signing up to Audexlk. In order to'; 
                 $email_body.=' validate your acoount you need enter the given OTP in the verification page.<br>';
                 $email_body.='<h3>The OTP</h3><br><h1>'.$otp.'</h1><br>';
                 $email_body.='Thank you,<br>Audexlk</p>';

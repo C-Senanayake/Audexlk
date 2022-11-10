@@ -30,13 +30,16 @@
     border-radius: 3px;
   }
   nav ul li:hover{
-    background: white;
+    background: #E5E9F7;
     /* transition: .5s; */
+    height: 10vh;
+
     
   }
   nav ul li:hover a{
     /* transition: .5s; */
     color: #F01131;
+    
     
   }
   .nav_tags.active,.nav_tags:hover{
