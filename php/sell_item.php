@@ -93,7 +93,7 @@
 
             if($result_set ){
                 //query successful               
-                header('Location:seller_advertisement.php');
+                header('Location:seller_advertisements.php');
             }
             else{
                 $errors[]='Failed to add the product';

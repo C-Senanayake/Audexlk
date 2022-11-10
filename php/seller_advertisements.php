@@ -1,7 +1,37 @@
 <!-- <?php session_start();?>
 <?php require_once('../include/connection.php');?>
 <?php require_once('../include/functions.php');?> -->
+<?php 
+    //checking if a user is logged in
+    if(!isset($_SESSION['user_id'])){
+        header('Location:index.php');
+    }
+?>
 
+<?php
+    $email=$_SESSION['email'];
+    $product_list='';
+
+    $query="SELECT * FROM product WHERE is_deleted=0 AND email='{$email}' ORDER BY product_category";
+    $result_set=mysqli_query($connection,$query);
+
+    if($result_set){
+        while($product=mysqli_fetch_assoc($result_set)){
+            
+            $product_list.="<div class=\"advertisements\">";
+            $product_list.="<div class=\"image\"><img src=\"\" alt=\"photo\"></div>";
+            $product_list.="<p class=\"one\">{$product['product_title']}</p>";
+            $product_list.="<p class=\"two\">{$product['product_type']}</p>";
+            $product_list.="<p class=\"three\">N/A</p>";
+            $product_list.="<p class=\"two\">Rs.{$product['price']}</p>";
+            $product_list.="<a class=\"five\" href=\"#?product_id={$product['product_id']}\">Edit</a>";
+            $product_list.="<a class=\"six\" href=\"#?product_id={$product['product_id']}\">Preview</a>";
+            $product_list.="</div>";
+            
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +66,7 @@
                 <a href="#"><i class="fas fa-qrcode"></i> <span>Dashboard</span></a>
                 <a href="#"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
                 <a class="current" href="#"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
-                <a href="#"> <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Sell Item</span></a>
+                <a href="sell_item.php"> <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Sell Item</span></a>
                 <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
         </div>
         <div class="poster_advertisements">
@@ -53,8 +83,8 @@
                 <p class="six">Priview</p>
 
             </div>
-            <div class="advertisements">
-                <!-- <img class="two" src="../img/Rectangle 100.png" alt="photo"> -->
+            <!-- <div class="advertisements"> -->
+                <!-- <img class="two" src="../img/Rectangle 100.png" alt="photo">
                 <div class="image">
                     <img src="../img/Rectangle 100.png" alt="photo">
                 </div>
@@ -63,8 +93,9 @@
                 <p class="three">Bids/Offers</p>
                 <p class="four">Price</p>
                 <a class="five" href="#">Edit</a>
-                <a class="six" href="#">Preview</a>
-            </div>
+                <a class="six" href="#">Preview</a> -->
+                <?php echo $product_list;?>
+            <!-- </div> -->
         </div>
 
     </div>
