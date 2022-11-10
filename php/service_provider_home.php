@@ -1,4 +1,4 @@
-<?php include('./header.php') ?>
+<?php include('./php/header.php.php') ?>
 
 <nav>
     <input type="checkbox" name="check" id="check" onchange="docheck()">
@@ -24,6 +24,4 @@
         <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
     </div>
     
-
-
-<?php include('./footer.php') ?>
+<?php include('./php/footer.php') ?>
