@@ -29,11 +29,20 @@
     padding: 0 10px;
     border-radius: 3px;
   }
-  .nav_tags.active,.nav_tags:hover{
+  nav ul li:hover{
     background: #ffffff;
     transition: .5s;
-    padding: 5px 10px 5px 10px;
-    border-radius: 5px;
+    
+  }
+  nav ul li:hover a{
+    background: #ffffff;
+    transition: .5s;
+    color: #F01131;
+    
+  }
+  .nav_tags.active,.nav_tags:hover{
+    color: #F01131;
+
 
   }
   .checkbtn{
@@ -109,7 +118,7 @@
 .form{
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: fixed;
     justify-content: center;
     align-items: left;
     width: 30%;
@@ -160,10 +169,9 @@
 form .reg_now{
   padding-top:40px;
 }
-
 .form .submit input:hover{
     background: rgb(80, 8, 222);
     color: rgb(255, 255, 255);
     border-radius: 12px;
 
-} 
+}

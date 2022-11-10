@@ -1,0 +1,69 @@
+.container .sidebar{   
+    background: black;
+    width: 13%;
+    height: 90vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+}
+.checkbtn1{
+    font-size: 25pt;
+    color: rgb(0, 0, 0);
+    float: right;
+    line-height: 10vh;
+    margin-right: 3%;
+    cursor: pointer;
+    display: none;
+  }
+  #check1{
+    display: none;
+  }
+
+  .side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8% 10%;
+  }
+
+  .side  i {
+    margin-right: 6%;
+  }
+
+  .side  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .side:hover {
+    background-color: white;
+    color: red;
+  }
+
+  .side:hover  a {
+    color: red;
+  }
+@media (max-width: 1300px){
+    .container .sidebar{
+        width: 20%;
+    }
+}
+@media (max-width: 900px){
+    .container .sidebar{
+        width: 30%;
+    }
+}
+@media (max-width: 650px){
+    .container .sidebar{
+        width: 35%;
+    }
+}
+@media (max-width: 550px){
+    .container .sidebar{
+        width: 40%;
+    }
+}
+
+
+ 
