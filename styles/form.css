@@ -169,9 +169,10 @@
 form .reg_now{
   padding-top:40px;
 }
+
 .form .submit input:hover{
     background: rgb(80, 8, 222);
     color: rgb(255, 255, 255);
     border-radius: 12px;
 
-}
+} 
