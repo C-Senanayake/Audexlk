@@ -162,18 +162,56 @@
 /* ADDED BY EPA */
 
 form .reg_now{
-  padding-top:400px;
+  padding-top:40px;
 }
 
 .sidebar {
   position:fixed;
   width:240px;
   height:100%;
-  background: #ba1a1a;
-  color: red;
+  background: #1e1e1e;
+
  
 }
 .sidebar a{
-  color:red;
-  font-size: 200;
+  display: block;
+  color: white;
+  height: 65px;
+  width: 100%;
+  line-height: 65px;
+  padding-left: 30px;
+ 
+  border-left: 2px solid #e5e9f7 transparent ;
+}
+
+a:hover, a:active{
+  border-left: 2px solid #e5e9f7;
+  color:#e70000;
+  background-color: #e5e9f7;
+
+}
+
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 16px;
+}
+
+@media (max-width:860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin:100px 0;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+
+  }
+
 }
