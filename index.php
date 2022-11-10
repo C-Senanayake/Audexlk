@@ -1,5 +1,5 @@
  <?php //require_once('./include/connection.php');?> 
-<?php include('header.php'); ?> 
+<?php include('./view/header.php'); ?> 
 
     <nav>
         <input type="checkbox" name="check" id="check" onchange="docheck()">
@@ -40,4 +40,4 @@
         </div>
     </div>
 
-    <?php include('footer.php'); ?> 
+    <?php include('./view/footer.php'); ?> 
