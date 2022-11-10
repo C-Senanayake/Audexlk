@@ -1,4 +1,4 @@
-<?php include('./header.php') ?>
+<?php include('./view/header.php') ?>
 
 <nav>
     <input type="checkbox" name="check" id="check" onchange="docheck()">
@@ -26,4 +26,4 @@
     
 
 
-<?php include('./footer.php') ?>
+<?php include('./view/footer.php') ?>
