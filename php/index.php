@@ -44,7 +44,31 @@
                             _id= {$_SESSION['user_id']} LIMIT 1";
                     $result_set=mysqli_query($connection,$query);
                     verify_query($result_set);
-                    header('Location:home.php');
+                    //header('Location:home.php');
+
+                    // ADDED BY EPA FOR ROUTING ACTIONS
+
+                    $user_type =  $user['user_type'];
+         
+
+                    switch ($user_type) {
+                        case 'service provider':
+                            echo "service provider";
+                            header('Location:service_provider_home.php');
+                            break;
+
+                            case 'seller':
+                                echo "seller";
+                                // header('Location:sell_item.php');
+                                break;
+                        
+                        default:
+                            header('Location:index.php');
+                            break;
+                    }
+
+
+
                 }else if($user['email_active']==0){
                 $errors[]='Email not verified';
 
