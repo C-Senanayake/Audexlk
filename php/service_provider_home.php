@@ -31,7 +31,7 @@
 
     <div class="sidebar">
         <a href="#"><i class="fas fa-qrcode"></i> <span>Dashboard</span></a>
-        <a href="./service_provider_profile_settings.php"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
+        <a href="./service_provider_profile.php"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile</span></a>
         <a href="#"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
         <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i><span>Calender</span></a>
         <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
