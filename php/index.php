@@ -44,12 +44,12 @@
                             _id= {$_SESSION['user_id']} LIMIT 1";
                     $result_set=mysqli_query($connection,$query);
                     verify_query($result_set);
+
                     //header('Location:home.php');
 
                     // ADDED BY EPA FOR ROUTING ACTIONS
 
                     $user_type =  $user['user_type'];
-         
 
                     switch ($user_type) {
                         case 'service provider':
@@ -57,10 +57,17 @@
                             header('Location:service_provider_home.php');
                             break;
 
-                            case 'seller':
-                                echo "seller";
-                                // header('Location:sell_item.php');
-                                break;
+                        case 'seller':
+                            header('Location:index.php'); //haduwata passe hari file eka methanata dapan
+                            break;
+
+                        case 'buyer':
+                            header('Location:index.php');
+                            break;
+
+                        case 'admin':
+                            header('Location:index.php');
+                            break;
                         
                         default:
                             header('Location:index.php');

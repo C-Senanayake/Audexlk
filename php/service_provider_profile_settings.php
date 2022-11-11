@@ -30,12 +30,31 @@
 
 
     <div class="sidebar">
-        <a href="#"><i class="fas fa-qrcode"></i> <span>Dashboard</span></a>
-        <a href="./service_provider_profile_settings.php"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
-        <a href="#"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
-        <a href="#"> <i class="fa fa-calendar" aria-hidden="true"></i><span>Calender</span></a>
-        <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
+        <a href="#"><i class="fas fa-qrcode" id="dashboard"></i> <span>Dashboard</span></a>
+        <a href="./service_provider_profile_settings.php" id="profile-settings" > <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
+        <a href="#" id="advertisements"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
+        <a href="#" id="calender"> <i class="fa fa-calendar" aria-hidden="true"></i><span>Calender</span></a>
+        <a href="#" id="messages"> <i class="fa fa-comments"></i><span>Messages</span></a>       
     </div>
+
+    <div class="service-provider-profile">
+        
+    </div>
+
+
+
+
+
+
+    <script>
+
+        //keeping the sidebar button clicked at the page
+
+        link = document.querySelector('#profile-settings');
+        link.style.background = "white";
+        link.style.color = "red";
+
+    </script>
 
 </body>
 </html>
