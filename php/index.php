@@ -51,28 +51,28 @@
 
                     $user_type =  $user['user_type'];
 
-                    switch ($user_type) {
-                        case 'service provider':
-                            echo "service provider";
-                            header('Location:service_provider_home.php');
-                            break;
+                    // switch ($user_type) {
+                    //     case 'service provider':
+                    //         echo "service provider";
+                    //         header('Location:service_provider_home.php');
+                    //         break;
 
-                        case 'seller':
-                            header('Location:index.php'); //haduwata passe hari file eka methanata dapan
-                            break;
+                    //     case 'seller':
+                    //         header('Location:index.php'); //haduwata passe hari file eka methanata dapan
+                    //         break;
 
-                        case 'buyer':
-                            header('Location:index.php');
-                            break;
+                    //     case 'buyer':
+                    //         header('Location:index.php');
+                    //         break;
 
-                        case 'admin':
-                            header('Location:index.php');
-                            break;
+                    //     case 'admin':
+                    //         header('Location:index.php');
+                    //         break;
                         
-                        default:
-                            header('Location:index.php');
-                            break;
-                    }
+                    //     default:
+                    //         header('Location:index.php');
+                    //         break;
+                    // }
 
 
 
