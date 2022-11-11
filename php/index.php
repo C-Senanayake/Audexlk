@@ -45,7 +45,7 @@
                     $result_set=mysqli_query($connection,$query);
                     verify_query($result_set);
 
-                    //header('Location:home.php');
+                    header('Location:home.php');
 
                     // ADDED BY EPA FOR ROUTING ACTIONS
 

@@ -9,6 +9,7 @@
         $email='';
         $phone='';
         $password='';
+        $type='';
         $otp='';
 
     if(isset($_POST['submit'])){
@@ -17,9 +18,10 @@
         $lname=$_POST['lname'];
         $email=$_POST['email'];
         $phone=$_POST['phone'];
+        $type =$_POST['type'];
         $password=$_POST['password'];
         //checking required field
-        $req_fields=array('fname','lname','email','phone','password');
+        $req_fields=array('fname','lname','email','phone','type','password');
         foreach($req_fields as $field){
             if(empty(trim($_POST[$field]))){
                 $errors[]=$field.' is required';
@@ -68,9 +70,15 @@
                             $query1="UPDATE seller SET(
                                 email='{$email}',first_name='{$fname}',last_name='{$lname}')
                                 WHERE email='{$email}' LIMIT 1 ";
+                        }
+                        if($type=="buyer"){
+                            $query1="UPDATE buyer SET(
+                                email='{$email}',first_name='{$fname}',last_name='{$lname}')
+                                WHERE email='{$email}' LIMIT 1 ";
+                        }
                         $result_set1=mysqli_query($connection,$query1);
                                 
-                        }
+                        
                     }
                 }
                 else{
@@ -83,10 +91,15 @@
                             email,first_name,last_name)
                             VALUES (
                             '{$email}','{$fname}', '{$lname}')";
+                    }
+                    if($type=="buyer"){
+                        $query1="INSERT INTO buyer(
+                            email,first_name,last_name)
+                            VALUES (
+                            '{$email}','{$fname}', '{$lname}')";
+                    }
                     $result_set1=mysqli_query($connection,$query1);
                     
-                    }
-
                 }
             }
 
@@ -95,7 +108,6 @@
                 //query successful
                 //otp sending by email
                 
-
                 $to=$email;
                 $sender='audexlk@gmail.com';
                 $mail_subject='Verify Email Address';
@@ -200,5 +212,8 @@
 </body>
 <script src="../js/form.js"></script>
 </html>
-<?php mysqli_close($connection);?>
-<!-- Closing the connection
+
+<?php 
+    mysqli_close($connection); 
+?>
+<!-- Closing the connection-->
