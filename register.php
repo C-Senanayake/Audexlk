@@ -8,11 +8,11 @@
         </label>
         <img src="img/image 1.png" alt="">
         <ul>
-            <li><a href="#" class="nav_tags">Home</a></li>
+            <li><a href="home.php" class="nav_tags">Home</a></li>
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
-            <li><a href="#" class="nav_tags">Login</a></li>
+            <li><a href="index.php" class="nav_tags">Login</a></li>
         </ul>
     </nav>
     <div class="container">

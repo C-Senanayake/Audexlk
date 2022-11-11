@@ -12,7 +12,7 @@
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
-            <li><a href="#" class="nav_tags">Login</a></li>
+            <li><a href="index.php" class="nav_tags">Login</a></li>
         </ul>
     </nav>
     <div class="container">

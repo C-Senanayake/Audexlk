@@ -7,17 +7,17 @@
     </label>
     <img src="img/image 1.png" alt="">
     <ul>
-        <li><a href="#" class="nav_tags">Home</a></li>
+        <li><a href="home.php" class="nav_tags">Home</a></li>
         <li><a href="#" class="nav_tags">Shop</a></li>
         <li><a href="#" class="nav_tags">Sound Engineers</a></li>
         <li><a href="#" class="nav_tags">Events</a></li>
-        <li><a href="#" class="nav_tags">Login</a></li>
+        <li><a href="index.php" class="nav_tags">Login</a></li>
     </ul>
 </nav>
 
 
     <div class="sidebar">
-        <a href="#" ><i class="fas fa-address-card"></i> <span>My Profile</span></a>
+        <a href="my_profile.php" ><i class="fas fa-address-card"></i> <span>My Profile</span></a>
         <a href="#"> <i class="far fa-calendar-check" aria-hidden="true"></i><span>Watch List</span></a>
         <a href="#"> <i class="fa fa-comments-o" aria-hidden="true"></i><span>Feedback</span></a>
         <a href="#"> <i class="fa fa-thumbs-up" aria-hidden="true"></i><span>Reactions</span></a>
