@@ -97,7 +97,7 @@
                 
 
                 $to=$email;
-                $sender='chamath5000@gmail.com';
+                $sender='audexlk@gmail.com';
                 $mail_subject='Verify Email Address';
                 $email_body='<p>Dear '.$fname.',<br>Thank you for signing up to Audexlk. In order to'; 
                 $email_body.=' validate your acoount you need enter the given OTP in the verification page.<br>';

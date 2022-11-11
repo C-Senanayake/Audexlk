@@ -7,6 +7,7 @@
 
     if(isset($_POST['submit'])){
         $email=$_SESSION['email'];
+
         $query="SELECT * FROM user WHERE email='{$email}' LIMIT 1";
 
         $result_set=mysqli_query($connection,$query);
@@ -15,8 +16,11 @@
             if(mysqli_num_rows($result_set)==1){
                 $result=mysqli_fetch_assoc($result_set);
                 $otp1=$result['otp'];
-                echo $otp1;
             }
+        }
+        else{
+            $errors[]="Query failed";
+
         }
 
         $otp=$_POST['otp'];

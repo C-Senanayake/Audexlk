@@ -128,18 +128,18 @@
         </label>
         <img src="../img/image 1.png" alt="">
         <ul>
-            <li><a href="#" class="nav_tags">Home</a></li>
+            <li><a href="home.php" class="nav_tags">Home</a></li>
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
-            <li><a href="#" class="nav_tags">Login</a></li>
+            <li><a href="logout.php" class="nav_tags">Logout</a></li>
         </ul>
     </nav>
     <div class="container_add">
         <div class="sidebar">
                 <a href="#"><i class="fas fa-qrcode"></i> <span>Dashboard</span></a>
                 <a href="#"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
-                <a href="#"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
+                <a href="seller_advertisements.php"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
                 <a class="current" href="#"> <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Sell Item</span></a>
                 <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
         </div>

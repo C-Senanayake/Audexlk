@@ -58,7 +58,7 @@
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
-            <li><a href="#" class="nav_tags">Login</a></li>
+            <li><a href="logout.php" class="nav_tags">Logout</a></li>
         </ul>
     </nav>
     <div class="container_add">

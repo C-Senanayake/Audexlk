@@ -44,28 +44,28 @@
                             _id= {$_SESSION['user_id']} LIMIT 1";
                     $result_set=mysqli_query($connection,$query);
                     verify_query($result_set);
-                    //header('Location:home.php');
+                    header('Location:seller_advertisements.php');
 
                     // ADDED BY EPA FOR ROUTING ACTIONS
 
                     $user_type =  $user['user_type'];
          
 
-                    switch ($user_type) {
-                        case 'service provider':
-                            echo "service provider";
-                            header('Location:service_provider_home.php');
-                            break;
+                    // switch ($user_type) {
+                    //     case 'service provider':
+                    //         echo "service provider";
+                    //         header('Location:service_provider_home.php');
+                    //         break;
 
-                            case 'seller':
-                                echo "seller";
-                                // header('Location:sell_item.php');
-                                break;
+                    //         case 'seller':
+                    //             echo "seller";
+                    //             // header('Location:sell_item.php');
+                    //             break;
                         
-                        default:
-                            header('Location:index.php');
-                            break;
-                    }
+                    //     default:
+                    //         header('Location:home.php');
+                    //         break;
+                    // }
 
 
 
@@ -105,7 +105,7 @@
         </label>
         <img src="../img/image 1.png" alt="">
         <ul>
-            <li><a href="#" class="nav_tags">Home</a></li>
+            <li><a href="home.php" class="nav_tags">Home</a></li>
             <li><a href="#" class="nav_tags">Shop</a></li>
             <li><a href="#" class="nav_tags">Sound Engineers</a></li>
             <li><a href="#" class="nav_tags">Events</a></li>
