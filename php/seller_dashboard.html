@@ -1,16 +1,19 @@
-<!-- <?php require_once('./include/connection.php');?> -->
+<!-- <?php session_start();?>
+<?php require_once('../include/connection.php');?>
+<?php require_once('../include/functions.php');?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/form.css">
-    <link rel="stylesheet" href="styles/verify.css">
+    <link rel="stylesheet" href="../styles/form.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" ></script> -->
     <script src="https://kit.fontawesome.com/128d66c486.js" crossorigin="anonymous"></script>
-    <title>Register</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <nav>
@@ -18,7 +21,7 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="img/image 1.png" alt="">
+        <img src="../img/image 1.png" alt="">
         <ul>
             <li><a href="#" class="nav_tags">Home</a></li>
             <li><a href="#" class="nav_tags">Shop</a></li>
@@ -27,23 +30,22 @@
             <li><a href="#" class="nav_tags">Login</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <div class="form">
-            <h1>Register</h1>
-            <div class="error">Error</div>
-            <form action="" autocomplete="off">
-                <label >OTP(sent to email address)</label>
-                <div class="input">
-                    <input type="number" name="otp"  class="otp1" placeholder="0" pattern="[0-9]{4}" onpaste="false" required>                   
-                </div>
-                <div class="submit">
-                    <input type="submit" value="Finish Registration" id="button">
-                </div>
-            </form>
+    <div class="container1">
+        <div class="sidebar">
+                <a class="current" href="#"><i class="fas fa-qrcode"></i> <span>Dashboard</span></a>
+                <a href="#"> <i class="fa fa-cog" aria-hidden="true"></i><span>Profile Settings</span></a>
+                <a href="#"> <i class="fa fa-ad" aria-hidden="true"></i><span>Advertisements</span></a>
+                <a href="#"> <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Sell Item</span></a>
+                <a href="#"> <i class="fa fa-comments"></i><span>Messages</span></a>       
         </div>
+        <div class="welcome">
+            <p>Welcome Mr.Mevan!<br>Thi is your dashboard.</p>
+        </div>
+
     </div>
 </body>
-<script src="js/form.js"></script>
+<script src="../js/form.js"></script>
 </html>
 <!-- <?php mysqli_close($connection);?> -->
-<!-- Closing the connection
+<!-- Closing the connection-->
+
