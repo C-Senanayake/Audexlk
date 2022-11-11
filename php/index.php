@@ -44,12 +44,16 @@
                             _id= {$_SESSION['user_id']} LIMIT 1";
                     $result_set=mysqli_query($connection,$query);
                     verify_query($result_set);
+<<<<<<< HEAD
                     header('Location:seller_advertisements.php');
+=======
+
+                    //header('Location:home.php');
+>>>>>>> 486fc33812769c2ceb7fdca49a64199adeb9e68c
 
                     // ADDED BY EPA FOR ROUTING ACTIONS
 
                     $user_type =  $user['user_type'];
-         
 
                     // switch ($user_type) {
                     //     case 'service provider':
@@ -57,10 +61,24 @@
                     //         header('Location:service_provider_home.php');
                     //         break;
 
+<<<<<<< HEAD
                     //         case 'seller':
                     //             echo "seller";
                     //             // header('Location:sell_item.php');
                     //             break;
+=======
+                        case 'seller':
+                            header('Location:index.php'); //haduwata passe hari file eka methanata dapan
+                            break;
+
+                        case 'buyer':
+                            header('Location:index.php');
+                            break;
+
+                        case 'admin':
+                            header('Location:index.php');
+                            break;
+>>>>>>> 486fc33812769c2ceb7fdca49a64199adeb9e68c
                         
                     //     default:
                     //         header('Location:home.php');
