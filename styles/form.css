@@ -170,6 +170,7 @@ form .reg_now{
   width:240px;
   height:100%;
   background: #1e1e1e;
+  margin-right: 0;
 
  
 }
@@ -199,6 +200,15 @@ a:hover, a:active{
 .sidebar a i{
   font-size: 23px;
   margin-right: 16px;
+}
+body > div.message-content{
+  margin: 0;
+  position: fixed;
+  width: 1155px;
+  height: 100%;
+  left: 240px;
+  top: 65px;
+  background: #E5E9F7;
 }
 .content-box{
   position: fixed;
